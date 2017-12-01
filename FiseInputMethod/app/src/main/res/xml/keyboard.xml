@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:keyWidth="20%p"
+    android:horizontalGap="0px"
+    android:verticalGap="0px"
+    android:keyHeight="60dp"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content">
+    <Row>
+        <Key android:codes="49" android:keyLabel="1"
+            android:keyEdgeFlags="left" android:keyOutputText="1"
+            android:keyIcon="@drawable/1"/>
+        <Key android:codes="49,97,98,99" android:keyLabel="2abc"
+             android:keyOutputText="2abc" android:keyIcon="@drawable/2"/>
+        <Key android:codes="50,100,101,102" android:keyLabel="3def"
+            android:keyOutputText="3def" android:keyIcon="@drawable/3"/>
+        <Key android:codes="51,103,104,105" android:keyLabel="4ghi"
+            android:keyOutputText="4ghi" android:keyIcon="@drawable/4"/>
+        <Key android:codes="-5" android:keyLabel="Cancel"
+             android:keyIcon="@drawable/cancel"  android:keyEdgeFlags="right"/>
+    </Row>
+    <Row>
+        <Key android:codes="52,106,107,108" android:keyLabel="5jkl"
+            android:keyEdgeFlags="left" android:keyOutputText="5jkl"
+            android:keyIcon="@drawable/5"/>
+        <Key android:codes="53,109,110,111" android:keyLabel="6mno"
+            android:keyOutputText="6mno" android:keyIcon="@drawable/6"/>
+        <Key android:codes="54,112,113,114,115" android:keyLabel="7pqrs"
+            android:keyOutputText="7pqrs" android:keyIcon="@drawable/7"/>
+        <Key android:codes="55,116,117,118" android:keyLabel="8tuv"
+            android:keyOutputText="8tuv" android:keyIcon="@drawable/8"/>
+        <Key android:codes="32" android:keyLabel="Space"
+            android:keyIcon="@drawable/space"  android:keyEdgeFlags="right"/>
+    </Row>
+    <Row>
+        <Key android:codes="56,119,120,121,122" android:keyLabel="9wxyz"
+            android:keyEdgeFlags="left" android:keyOutputText="9wxyz"
+            android:keyIcon="@drawable/9"/>
+        <Key android:codes="48" android:keyLabel="0"
+            android:keyOutputText="0" android:keyIcon="@drawable/0"/>
+        <Key android:codes="46" android:keyLabel="."
+            android:keyOutputText="." android:keyIcon="@drawable/switch"/>
+        <Key android:codes="47" android:keyLabel="/*"
+            android:keyOutputText="4ghi" android:keyIcon="@drawable/check_or_x"/>
+        <Key android:codes="-15" android:keyLabel="OK"
+            android:keyIcon="@drawable/ok"  android:keyEdgeFlags="right"/>
+    </Row>
+</keyboard>
