@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FiseLauncher</string>
+    <string name="function_phonebook">Phone</string>
+    <string name="function_wetchat">WetChat</string>
+    <string name="function_friends">Friends</string>
+    <string name="function_camera">Camera</string>
+    <string name="function_story">Story</string>
+    <string name="function_english_study">Study</string>
+    <string name="function_settings">Settings</string>
+    <string name="function_step">Step</string>
+    <string name="function_recorder">Recorder</string>
+    <string name="function_img">Album</string>
+    <string name="function_video">Video</string>
+    <string name="function_qr">QrCode</string>
+    <string name="function_heart_rate">HeartRate</string>
+
+    <string name="app_settings">Settings</string>
+    <string name="app_camera">Camera</string>
+    <string name="app_gallery">Gallery</string>
+    <string name="app_dialer">Dialer</string>
+    <string name="app_contact">Contacts</string>
+    <string name="app_location">Location</string>
+    <string name="app_mms">Mms</string>
+	<string name="app_clear">Clear</string>
+    <string name="app_playstore">PlayStore</string>
+    <string name="app_file_manager">File Manager</string>
+    <string name="app_qq">QQ</string>
+    <string name="app_video">Video Call</string>
+    <string name="app_wechat">WeChat</string>
+    <string name="app_stepcounter">Steps</string>
+    <string name="camera_can_not_found">Camera is not avalilable</string>
+    <string name="qq_can_not_be_found">You have not install QQ yet</string>
+    <string name="app_can_not_be_found">You have not install this application</string>
+    <string name="style_select">Select the Style of Analog Clock</string>
+    <string name="all_apps">All Apps</string>
+    <string name="function_client_test">Client Test</string>
+    <string name="app_sos">SOS</string>
+    <string name="app_heart_rate">HeartRate</string>
+    <string name="app_qr_code_for_download">Scans to Download</string>
+    <string name="app_qr_code_for_bind">Scans to Binding</string>
+    <string name="default_send_text">please input messages</string>
+    <string name="network_disavilable_text">Network is unavaliable</string>
+    <string name="copyright">©2017  All Rights Reserved</string>
+    <string name="unit_standby_weather">%℃</string>
+    <string name="normal_call">Dial Number</string>
+    <string name="normal_mms">Send Message</string>
+    <string name="video_call">Video Call</string>
+    <string name="voice_call">Voice Call</string>
+    <string name="name_baba">Dady</string>
+    <string name="name_mama">Mummy</string>
+    <string name="name_nainai">GrandMother</string>
+    <string name="name_yeye">GrandFather</string>
+    <string name="contact_title">Dial Number</string>
+
+</resources>

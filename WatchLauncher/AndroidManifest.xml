@@ -1,0 +1,400 @@
+<!--<?xml version="1.0" encoding="utf-8" standalone="no"?>-->
+<!--<manifest xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--package="net.wecare.watchlauncher"-->
+    <!--platformBuildVersionCode="25"-->
+    <!--platformBuildVersionName="7.1.1">-->
+
+    <!--<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />-->
+    <!--<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />-->
+    <!--<uses-permission android:name="android.permission.INTERNET" />-->
+    <!--<uses-permission android:name="android.permission.READ_CALL_LOG" />-->
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
+    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />-->
+    <!--<uses-permission android:name="android.permission.BLUETOOTH" />-->
+    <!--<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />-->
+    <!--<uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />-->
+    <!--<uses-permission android:name="android.permission.WAKE_LOCK" />-->
+    <!--<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />-->
+    <!--<uses-permission android:name="android.permission.VIBRATE" />-->
+    <!--<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+    <!--<uses-permission android:name="android.permission.WRITE_SETTINGS" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />-->
+    <!--<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />-->
+    <!--<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />-->
+    <!--<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />-->
+    <!--<uses-permission android:name="android.permission.GET_TASKS" />-->
+    <!--<uses-permission android:name="net.wecare.watchlauncher.permission.JPUSH_MESSAGE" />-->
+    <!--<uses-permission android:name="android.permission.READ_CONTACTS" />-->
+    <!--<uses-permission android:name="android.permission.WRITE_CONTACTS" />-->
+    <!--<uses-permission android:name="android.permission.BATTERY_STATS" />-->
+    <!--<uses-permission android:name="android.permission.READ_SMS" />-->
+    <!--<uses-permission android:name="android.permission.CALL_PHONE" />-->
+    <!--<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />-->
+    <!--<uses-permission android:name="android.permission.RECEIVE_SMS" />-->
+    <!--<uses-permission android:name="android.permission.SEND_SMS" />-->
+    <!--<uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />-->
+    <!--<uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />-->
+    <!--<uses-permission android:name="android.permission.CAMERA" />-->
+
+    <!--<uses-feature android:name="android.hardware.camera" />-->
+    <!--<uses-feature android:name="android.hardware.camera.autofocus" />-->
+
+    <!--<permission-->
+        <!--android:name="net.wecare.watchlauncher.permission.JPUSH_MESSAGE"-->
+        <!--android:protectionLevel="signature" />-->
+
+    <!--<uses-permission android:name="android.permission.RECORD_AUDIO" />-->
+    <!--<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />-->
+
+    <!--<meta-data-->
+        <!--android:name="android.support.VERSION"-->
+        <!--android:value="25.3.0" />-->
+
+    <!--<application-->
+        <!--android:name="net.wecare.watchlauncher.app.WApp"-->
+        <!--android:allowBackup="true"-->
+        <!--android:icon="@mipmap/ic_launcher"-->
+        <!--android:label="@string/app_name"-->
+        <!--android:supportsRtl="true"-->
+        <!--android:theme="@style/AppTheme">-->
+        <!--<meta-data-->
+            <!--android:name="com.amap.api.v2.apikey"-->
+            <!--android:value="6edd49bb383c9277db131997e5b3b4fa" />-->
+
+        <!--<activity-->
+            <!--android:name="net.wecare.watchlauncher.aty.MainAty"-->
+            <!--android:configChanges="keyboardHidden|mcc|mnc"-->
+            <!--android:launchMode="singleInstance"-->
+            <!--android:theme="@style/AppTheme.NoStatusBar" />-->
+        <!--<activity-->
+            <!--android:name="net.wecare.watchlauncher.aty.MainFragmentAty"-->
+            <!--android:configChanges="keyboardHidden|mcc|mnc"-->
+            <!--android:launchMode="singleInstance"-->
+            <!--android:theme="@style/AppTheme.NoStatusBar">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+                <!--<category android:name="android.intent.category.HOME" />-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+        <!--<activity android:name="net.wecare.watchlauncher.aty.TestAty" />-->
+
+        <!--<service android:name="com.amap.api.location.APSService" />-->
+        <!--<service-->
+            <!--android:name="cn.jpush.android.service.PushService"-->
+            <!--android:enabled="true"-->
+            <!--android:exported="false"-->
+            <!--android:process=":pushcore">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="cn.jpush.android.intent.REGISTER" />-->
+                <!--<action android:name="cn.jpush.android.intent.REPORT" />-->
+                <!--<action android:name="cn.jpush.android.intent.PushService" />-->
+                <!--<action android:name="cn.jpush.android.intent.PUSH_TIME" />-->
+            <!--</intent-filter>-->
+        <!--</service>-->
+        <!--<service-->
+            <!--android:name="cn.jpush.android.service.DaemonService"-->
+            <!--android:enabled="true"-->
+            <!--android:exported="true">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="cn.jpush.android.intent.DaemonService" />-->
+                <!--<category android:name="net.wecare.watchlauncher" />-->
+            <!--</intent-filter>-->
+        <!--</service>-->
+
+        <!--<receiver-->
+            <!--android:name="cn.jpush.android.service.PushReceiver"-->
+            <!--android:enabled="true"-->
+            <!--android:exported="false"-->
+            <!--android:process=":pushcore">-->
+            <!--<intent-filter android:priority="1000">-->
+                <!--<action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />-->
+                <!--<category android:name="net.wecare.watchlauncher" />-->
+            <!--</intent-filter>-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.USER_PRESENT" />-->
+                <!--<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />-->
+            <!--</intent-filter>-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.PACKAGE_ADDED" />-->
+                <!--<action android:name="android.intent.action.PACKAGE_REMOVED" />-->
+
+                <!--<data android:scheme="package" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+
+        <!--<activity-->
+            <!--android:name="cn.jpush.android.ui.PushActivity"-->
+            <!--android:configChanges="keyboardHidden|orientation"-->
+            <!--android:exported="false"-->
+            <!--android:theme="@android:style/Theme.NoTitleBar">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="cn.jpush.android.ui.PushActivity" />-->
+
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+                <!--<category android:name="net.wecare.watchlauncher" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+        <!--<activity-->
+            <!--android:name="cn.jpush.android.ui.PopWinActivity"-->
+            <!--android:configChanges="keyboardHidden|orientation"-->
+            <!--android:exported="false"-->
+            <!--android:theme="@style/MyDialogStyle">-->
+            <!--<intent-filter>-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+                <!--<category android:name="net.wecare.watchlauncher" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+
+        <!--<service-->
+            <!--android:name="cn.jpush.android.service.DownloadService"-->
+            <!--android:enabled="true"-->
+            <!--android:exported="false" />-->
+
+        <!--<receiver-->
+            <!--android:name="cn.jpush.android.service.AlarmReceiver"-->
+            <!--android:exported="false" />-->
+        <!--<receiver-->
+            <!--android:name="net.wecare.watchlauncher.receivers.JpushReceiver"-->
+            <!--android:enabled="true">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="cn.jpush.android.intent.REGISTRATION" />-->
+                <!--<action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />-->
+                <!--<action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />-->
+                <!--<action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />-->
+                <!--<action android:name="cn.jpush.android.intent.CONNECTION" />-->
+
+                <!--<category android:name="net.wecare.watchlauncher" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+
+        <!--<uses-library-->
+            <!--android:name="com.google.android.wearable"-->
+            <!--android:required="false" />-->
+        <!--<activity-->
+            <!--android:name="net.wecare.watchlauncher.aty.ChatAty"-->
+            <!--android:theme="@style/AppTheme.NoStatusBar"-->
+            <!--android:windowSoftInputMode="adjustResize" />-->
+        <!--<service-->
+            <!--android:name="net.wecare.watchlauncher.service.MyService"-->
+            <!--android:enabled="true"-->
+            <!--android:exported="false" />-->
+        <!--<receiver-->
+            <!--android:name="net.wecare.watchlauncher.receivers.BatteryReceiver"-->
+            <!--android:enabled="true"-->
+            <!--android:exported="false" />-->
+
+        <!--<activity android:name="net.wecare.watchlauncher.aty.ContactAty" />-->
+        <!--<activity android:name="net.wecare.watchlauncher.aty.MakeFriendsAty" />-->
+        <!--<activity android:name="net.wecare.watchlauncher.aty.FriendsAty" />-->
+        <!--<activity android:name="net.wecare.watchlauncher.aty.MyNameAty" />-->
+        <!--<activity android:name="net.wecare.watchlauncher.aty.AllAppsActivity" />-->
+
+        <!--<receiver-->
+            <!--android:name="net.wecare.watchlauncher.receivers.CareTimeAlarmReceiver"-->
+            <!--android:enabled="true"-->
+            <!--android:exported="false">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="net.wecare.watch_launcher.ACTION_CARETIME" />-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+        <!--<receiver-->
+            <!--android:name="net.wecare.watchlauncher.receivers.ClassTimeReceiver"-->
+            <!--android:enabled="true"-->
+            <!--android:exported="false">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="net.wecare.watch_launcher.ACTION_CLASSTIME" />-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+        <!--<receiver android:name="net.wecare.watchlauncher.receivers.FiseInterceptCallReceiver">-->
+            <!--<intent-filter android:priority="1000">-->
+                <!--<action android:name="android.intent.action.PHONE_STATE" />-->
+                <!--<action android:name="android.intent.action.NEW_OUTGOING_CALL" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+        <!--<receiver-->
+            <!--android:name="net.wecare.watchlauncher.receivers.AlarmTimeReceiver"-->
+            <!--android:enabled="true"-->
+            <!--android:exported="false">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="net.wecare.watch_launcher.ACTION_ALARMTIME" />-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+
+        <!--<activity android:name="net.wecare.watchlauncher.aty.AlarmTipAty" />-->
+        <!--<activity android:name="net.wecare.watchlauncher.aty.FindDeviceAty" />-->
+
+        <!--<receiver-->
+            <!--android:name="net.wecare.watchlauncher.receivers.SmsFilterReceiver"-->
+            <!--android:permission="android.permission.BROADCAST_SMS">-->
+            <!--<intent-filter android:priority="2147483647">-->
+                <!--<action android:name="android.provider.Telephony.SMS_RECEIVED" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+
+        <!--<activity android:name="net.wecare.watchlauncher.aty.SettingAty" />-->
+        <!--<activity android:name="net.wecare.watchlauncher.aty.AboutAty" />-->
+
+        <!--<receiver-->
+            <!--android:name="net.wecare.watchlauncher.receivers.MyPushMessageReceiver"-->
+            <!--android:enabled="true"-->
+            <!--android:exported="false">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="io.rong.push.intent.MESSAGE_ARRIVED" />-->
+                <!--<action android:name="io.rong.push.intent.MI_MESSAGE_ARRIVED" />-->
+                <!--<action android:name="io.rong.push.intent.MESSAGE_CLICKED" />-->
+                <!--<action android:name="io.rong.push.intent.MI_MESSAGE_CLICKED" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+
+        <!--<activity android:name="net.wecare.watchlauncher.aty.WebAty" />-->
+        <!--<activity-->
+            <!--android:name="io.rong.callkit.MultiVideoCallActivity"-->
+            <!--android:launchMode="singleTop"-->
+            <!--android:screenOrientation="portrait"-->
+            <!--android:windowSoftInputMode="adjustResize|stateHidden">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="io.rong.intent.action.voip.MULTIVIDEO" />-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+        <!--<activity-->
+            <!--android:name="io.rong.callkit.SingleCallActivity"-->
+            <!--android:launchMode="singleTop"-->
+            <!--android:screenOrientation="portrait"-->
+            <!--android:windowSoftInputMode="adjustResize|stateHidden">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="io.rong.intent.action.voip.SINGLEVIDEO" />-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+            <!--<intent-filter>-->
+                <!--<action android:name="io.rong.intent.action.voip.SINGLEAUDIO" />-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+        <!--<activity-->
+            <!--android:name="io.rong.callkit.MultiAudioCallActivity"-->
+            <!--android:launchMode="singleTop"-->
+            <!--android:screenOrientation="portrait"-->
+            <!--android:windowSoftInputMode="adjustResize|stateHidden">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="io.rong.intent.action.voip.MULTIAUDIO" />-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+        <!--<activity android:name="io.rong.callkit.CallSelectMemberActivity" />-->
+        <!--<activity android:name="io.rong.imkit.plugin.location.AMapLocationActivity" />-->
+        <!--<activity android:name="io.rong.imkit.plugin.location.AMapPreviewActivity" />-->
+        <!--<activity android:name="io.rong.imkit.plugin.location.AMapRealTimeActivity" />-->
+        <!--<activity-->
+            <!--android:name="io.rong.imkit.plugin.image.PictureSelectorActivity"-->
+            <!--android:screenOrientation="portrait" />-->
+        <!--<activity-->
+            <!--android:name="io.rong.imkit.plugin.image.PicturePreviewActivity"-->
+            <!--android:screenOrientation="portrait" />-->
+        <!--<activity-->
+            <!--android:name="io.rong.imkit.tools.RongWebviewActivity"-->
+            <!--android:screenOrientation="portrait">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="io.rong.imkit.intent.action.webview" />-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+        <!--<activity-->
+            <!--android:name="io.rong.imkit.widget.provider.TakingPicturesActivity"-->
+            <!--android:configChanges="keyboardHidden|orientation"-->
+            <!--android:screenOrientation="portrait" />-->
+        <!--<activity-->
+            <!--android:name="io.rong.imkit.activity.PicturePagerActivity"-->
+            <!--android:theme="@android:style/Theme.NoTitleBar.Fullscreen">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="io.rong.imkit.intent.action.picturepagerview" />-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+        <!--<activity-->
+            <!--android:name="io.rong.imkit.mention.MemberMentionedActivity"-->
+            <!--android:configChanges="keyboardHidden|orientation"-->
+            <!--android:windowSoftInputMode="adjustPan|stateHidden" />-->
+        <!--<activity android:name="io.rong.imkit.activity.FileManagerActivity" />-->
+        <!--<activity android:name="io.rong.imkit.activity.FileListActivity" />-->
+        <!--<activity android:name="io.rong.imkit.activity.FilePreviewActivity">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="io.rong.imkit.intent.action.openfile" />-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+        <!--<activity-->
+            <!--android:name="io.rong.imkit.activity.CSLeaveMessageActivity"-->
+            <!--android:configChanges="keyboardHidden|orientation"-->
+            <!--android:screenOrientation="portrait" />-->
+
+        <!--<meta-data-->
+            <!--android:name="RONG_CLOUD_APP_KEY"-->
+            <!--android:value="8luwapkv8l3sl" />-->
+
+        <!--<service-->
+            <!--android:name="io.rong.imlib.ipc.RongService"-->
+            <!--android:exported="true"-->
+            <!--android:process=":ipc" />-->
+        <!--<service-->
+            <!--android:name="io.rong.imlib.ReConnectService"-->
+            <!--android:exported="true" />-->
+
+        <!--<receiver-->
+            <!--android:name="io.rong.imlib.ConnectChangeReceiver"-->
+            <!--android:exported="true" />-->
+        <!--<receiver-->
+            <!--android:name="io.rong.imlib.HeartbeatReceiver"-->
+            <!--android:process=":ipc" />-->
+
+        <!--<service-->
+            <!--android:name="io.rong.push.core.PushRegistrationService"-->
+            <!--android:exported="false" />-->
+        <!--<service-->
+            <!--android:name="io.rong.push.core.MessageHandleService"-->
+            <!--android:exported="true" />-->
+        <!--<service-->
+            <!--android:name="io.rong.push.PushService"-->
+            <!--android:exported="true"-->
+            <!--android:process="io.rong.push" />-->
+
+        <!--<receiver-->
+            <!--android:name="io.rong.push.PushReceiver"-->
+            <!--android:process="io.rong.push">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="io.rong.push.intent.action.HEART_BEAT" />-->
+            <!--</intent-filter>-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />-->
+            <!--</intent-filter>-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.BOOT_COMPLETED" />-->
+            <!--</intent-filter>-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.USER_PRESENT" />-->
+                <!--<action android:name="android.intent.action.ACTION_POWER_CONNECTED" />-->
+                <!--<action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+
+        <!--<meta-data-->
+            <!--android:name="JPUSH_CHANNEL"-->
+            <!--android:value="developer-default" />-->
+        <!--<meta-data-->
+            <!--android:name="JPUSH_APPKEY"-->
+            <!--android:value="4ee647f8c510301b9089ea97" />-->
+    <!--</application>-->
+<!--</manifest>-->

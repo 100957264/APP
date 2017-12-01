@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="alert_low_battery">当前电量过低并且仅剩%1$d的电量,请及时充电</string>
+    <string name="alert_fall_down">您家孩子跌倒了...</string>
+    <string name="alert_taken_off">手环被取下...</string>
+    <string name="alert_fence_in">进了围栏:%1$s ...</string>
+    <string name="alert_fence_out">出了围栏:%1$s ...</string>
+    <string name="alert_soscall">正在进行SOS呼叫 ...</string>
+</resources>

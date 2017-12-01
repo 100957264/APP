@@ -1,0 +1,30 @@
+别名: mare
+创建日期: 2017-8-16
+条目类型: PrivateKeyEntry
+证书链长度: 1
+证书[1]:
+所有者: CN=mare_blue, OU=mare, O=mare
+发布者: CN=mare_blue, OU=mare, O=mare
+序列号: 40dd9098
+有效期开始日期: Wed Aug 16 09:48:46 CST 2017, 截止日期: Sun Aug 10 09:48:46 CST 2042
+证书指纹:
+         MD5: F1:C6:70:CD:8E:2F:D2:9C:5E:B4:AF:DA:DD:CC:1F:05
+         SHA1: 4B:DD:C5:6F:5E:A0:21:18:AD:25:AA:CD:F9:87:70:F7:C4:9F:73:17
+         SHA256: B3:25:D9:71:E8:FF:A4:8A:4D:AA:D9:26:E5:0B:53:FE:02:8E:BE:07:BB:AE:8E:E4:B9:63:8E:DE:FC:48:B9:F3
+         签名算法名称: SHA256withRSA
+         版本: 3
+
+扩展:
+
+#1: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: 4D 18 F6 87 BF D2 EA 13   96 F0 E8 1C 9D 23 28 2B  M............#(+
+0010: 31 7E 74 D2                                        1.t.
+]
+]
+
+
+
+*******************************************
+*******************************************

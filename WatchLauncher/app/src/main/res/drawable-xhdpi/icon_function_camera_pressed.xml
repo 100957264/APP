@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 灰色阴影 内容距离左边2dp，距离顶部4dp-->
+    <item
+        android:drawable="@drawable/icon_function_camera"
+        android:left="5dp"
+        android:top="5dp"
+        android:right="5dp"
+        android:bottom="5dp">
+    </item>
+</layer-list>

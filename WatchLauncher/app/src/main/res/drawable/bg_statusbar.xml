@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bitmap
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:antialias="true"
+    android:dither="true"
+    android:filter="true"
+    android:gravity="center"
+    android:mipMap="true"
+    android:tint="@color/bg_color_statusbar"
+    android:tintMode="src_in"
+    android:tileMode="clamp"
+    android:src="@drawable/ic_status_bg"/>

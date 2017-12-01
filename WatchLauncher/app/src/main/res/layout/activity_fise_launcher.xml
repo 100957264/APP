@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_fise_launcher"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:orientation="vertical"
+    tools:context="com.android.fisewatchlauncher.acty.FiseLauncherActivity">
+
+    <android.support.v4.view.ViewPager
+        android:background="@drawable/blue_fox_function_background0"
+        android:id="@+id/outer_view_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextClock
+        android:id="@+id/view_cover"
+        android:visibility="gone"
+        android:background="@color/textcolor_black"
+        android:format12Hour="上课禁用\nhh : mm"
+        android:format24Hour="上课禁用\nhh : mm"
+        android:lineSpacingExtra="5dp"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

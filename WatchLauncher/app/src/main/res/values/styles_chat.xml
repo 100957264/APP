@@ -1,0 +1,32 @@
+<resources>
+
+    <style name="chat_text_subhead_black">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/chat_text_title</item>
+        <item name="android:textSize">@dimen/chat_text_subhead</item>
+    </style>
+
+    <style name="chat_text_body">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/chat_text_sub</item>
+        <item name="android:textSize">@dimen/chat_text_body</item>
+    </style>
+
+    <style name="chat_text_read_status">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/chat_text_read_status_color</item>
+        <item name="android:textSize">@dimen/chat_text_read_status_size</item>
+    </style>
+
+
+    <style name="Talking.MessageTime" parent="android:Widget.TextView">
+        <item name="android:background">@drawable/talking_time_line</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:paddingLeft">6dp</item>
+        <item name="android:paddingRight">6dp</item>>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+</resources>

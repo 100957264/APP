@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.fisewatchlauncher"
+    android:versionCode="1"
+    android:versionName="1.01">
+
+    <!-- 网络 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+
+    <!-- 定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_UPDATES" /> <!-- 基站 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+
+    <!-- 读写 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <!-- 手机设置 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+
+    <!-- 弹框 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <!-- 音频相关 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+    <!-- 摄像头相关 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <!-- 电话相关 -->
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+
+    <!-- 联系人相关 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+
+    <!-- 蓝牙 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <!-- 账户相关 -->
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+
+    <!-- 进程相关 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <!-- 电池相关 -->
+    <uses-permission android:name="android.permission.BATTERY_STATS" />
+
+    <!-- 短信彩信 网络短信推送相关 -->
+    <uses-permission android:name="android.permission.RECEIVE_MMS" />
+    <uses-permission android:name="android.permission.RECEIVE_WAP_PUSH" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+    <!-- 日历相关 -->
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+
+    <!-- 开机自启动 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- 录屏权限 -->
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+
+    <!-- <uses-permission android:name="net.wecare.watchlauncher.permission.JPUSH_MESSAGE" /> -->
+
+    <!-- 连续广播（允许一个程序收到广播后快速收到下一个广播） -->
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+
+    <application
+        android:name=".KApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/icon_fise_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+
+        <!--
+                    <activity
+                    android:name=".acty.SplashActivity"
+                    android:screenOrientation="portrait"
+                    android:theme="@style/AppTheme.LockScreen"
+                    android:screenOrientation="portrait">
+                    <intent-filter>
+                        <action android:name="android.intent.action.MAIN" />
+
+                        <category android:name="android.intent.category.LAUNCHER" />
+                        <category android:name="android.intent.category.HOME" />
+                        <category android:name="android.intent.category.DEFAULT" />
+                        <category android:name="android.intent.category.LAUNCHER" />
+                    </intent-filter>
+                </activity>
+        -->
+
+        <activity
+            android:name=".acty.FiseLauncherActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dark.NoStatusBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".acty.FiseAnalogClockSelect"
+            android:label="@string/style_select"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dark.NoStatusBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".acty.FiseAppsListActivity"
+            android:label="@string/all_apps"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dark.NoStatusBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".acty.FiseKeyguardActivity"
+            android:excludeFromRecents="true"
+            android:hardwareAccelerated="true"
+            android:label="@string/app_name"
+            android:launchMode="singleInstance"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:taskAffinity=""
+            android:theme="@style/AppTheme.LockScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".acty.FiseChatMainActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".acty.ImagePreviewActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".acty.TcpclientActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".acty.FindPhoneDialog"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".function.micro.RecorderWavActivity"
+            android:theme="@style/AppTheme.Dark.NoStatusBar" />
+        <activity
+            android:name=".acty.SettingsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".acty.PhoneContactorActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dark.NoStatusBar" />
+        <activity
+            android:name=".acty.ClockAlarmActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".acty.WifiTestActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dark.NoStatusBar" />
+
+        <!-- 语音通话 -->
+        <activity
+            android:name=".acty.VoiceEaseCallActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dark.NoStatusBar" />
+        <!-- 视频通话 -->
+        <activity
+            android:name=".acty.VideoEaseCallActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dark.NoStatusBar" />
+        //==============================================================
+        <service android:name=".service.FiseService">
+            <intent-filter>
+                <action android:name="com.android.fisewatchlauncher.FiseService" />
+            </intent-filter>
+        </service>
+        <service android:name=".service.CameraService">
+            <intent-filter>
+                <action android:name="com.android.fisewatchlauncher.CameraService" />
+            </intent-filter>
+        </service>
+        //==============================================================
+        <receiver android:name=".receiver.PowerConnectionReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.ALSPSReceiver">
+            <intent-filter>
+                <action android:name="com.fise.intent.ACTION_PSENSOR" /><!--防脱广播-->
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".receiver.SOSCallReceiver">
+            <intent-filter>
+                <action android:name="fise.intent.action.SOS_CALL" /> <!-- 关机键长按五秒SOS广播 -->
+                <action android:name="com.fise.intent.ACTION_CALL_CONNECTED" /> <!-- 电话已接通广播 -->
+                <action android:name="android.intent.action.PHONE_STATE" />
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+                <action android:name="com.fise.intent.ACTION_HANGUP_CAUSE" /> <!-- 挂断原因(主叫方挂断 被叫方挂断 无人接听) -->
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.WifiStateReceiver">
+            <intent-filter>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+                <action android:name="android.net.wifi.STATE_CHANGE" />
+                <action android:name="android.net.wifi.RSSI_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.NetworkTypeReceiver">
+            <intent-filter>
+                <action android:name="com.fise.intent.ACTION_NETWORK_TYPE" />
+                <action android:name="com.fise.intent.ACTION_NO_SIM" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.CommonAlarmReceiver">
+            <intent-filter>
+                <action android:name="com.fise.intent.ACTION_ALARM_LOCATION_START" />
+                <action android:name="com.fise.intent.ACTION_ALARM_LOCATION_STOP" />
+                <action android:name="com.fise.intent.ACTION_ALARM_COMMON_CLOCK" />
+                <action android:name="com.fise.intent.ACTION_ALARM_CLASS_FORBIDEN" />
+                <action android:name="com.fise.intent.ACTION_ALARM_CONFIRMED_FREQUENCY_UPLOAD" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.AlarmReceiver">
+            <intent-filter>
+                <action android:name="com.fise.alarm.clock" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.VolteStateReceiver">
+            <intent-filter>
+                <action android:name="fise.intent.ACTION_VOLTE_ENABLE" />
+                <action android:name="fise.intent.ACTION_VOLTE_DISENABLE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.TestReceiver">
+            <intent-filter>
+                <action android:name="com.android.action.fise.test.findphone" /> <!-- 找手机测试广播 -->
+                <action android:name="com.android.action.fise.test.resetphone" /> <!-- 恢复出厂设置测试广播 -->
+                <action android:name="com.android.action.fise.test.contactor" /> <!-- 添加联系人测试广播 -->
+                <action android:name="com.android.action.fise.test.whitelist" /> <!-- 白名单测试广播 -->
+                <action android:name="com.android.action.fise.test.voice.upload" /> <!-- 语音上传测试广播 -->
+                <action android:name="com.android.action.fise.test.voice.download" /> <!-- 语音下载测试广播 -->
+                <action android:name="com.android.action.fise.test.img" /> <!-- 图片下载测试广播 -->
+                <action android:name="com.android.action.fise.test.location" /> <!-- 定位测试广播 -->
+                <action android:name="com.android.action.fise.test.voice.phonecall" /> <!-- 拨打电话测试广播 -->
+                <action android:name="com.android.action.fise.test.clock" /> <!-- 闹钟测试广播 -->
+                <action android:name="com.android.action.fise.test.wifi" /> <!-- 自动连接9D_3的WIFI-->
+                <action android:name="com.android.action.fise.test.ease" /> <!-- 环信测试广播-->
+            </intent-filter>
+
+        </receiver>
+        <receiver android:name=".receiver.SilenceTimeReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.silence.time" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.SMSReceiver">
+            <intent-filter>
+                <action android:name="com.android.action.fise.sms.relative" />
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".receiver.StickyReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter android:priority="1000">
+                <action android:name="com.mobile.applocker.REBOOT_SERVICE" />
+            </intent-filter>
+            <intent-filter android:priority="1000">
+                <action android:name="com.android.deskclock.ALARM_ALERT" />
+                <action android:name="com.android.deskclock.ALARM_DISMISS" />
+                <action android:name="com.android.deskclock.ALARM_DONE" />
+                <action android:name="com.android.deskclock.ALARM_SNOOZE" />
+                <action android:name="alarm_killed" />
+                <action android:name="cancel_snooze" />
+                <action android:name="com.android.alarmclock.ALARM_ALERT" />
+                <action android:name="com.samsung.sec.android.clockpackage.alarm.ALARM_ALERT" />
+                <action android:name="com.htc.android.worldclock.ALARM_ALERT" />
+                <action android:name="com.htc.android.worldclock.AlarmAlert" />
+                <action android:name="com.htc.worldclock.ALARM_ALERT" />
+                <action android:name="com.sonyericsson.alarm.ALARM_ALERT" />
+                <action android:name="zte.com.cn.alarmclock.ALARM_ALERT" />
+                <action android:name="com.motorola.blur.alarmclock.ALARM_ALERT" />
+                <action android:name="com.mobitobi.android.gentlealarm.ALARM_INFO" />
+                <action android:name="com.urbandroid.sleep.alarmclock.ALARM_ALERT" />
+                <action android:name="com.splunchy.android.alarmclock.ALARM_ALERT" />
+            </intent-filter>
+            <intent-filter android:priority="1000">
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.TIME_SET" />
+            </intent-filter>
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.DATE_CHANGED" />
+            </intent-filter>
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+            </intent-filter>
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+            <!--
+                <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.TIME_TICK" />&lt;!&ndash;系统每分钟会发出该广播&ndash;&gt;
+            </intent-filter>
+            -->
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+            </intent-filter>
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.PACKAGE_CHANGED" />
+            </intent-filter>
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+            </intent-filter>
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.PACKAGE_RESTARTED" />
+            </intent-filter>
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.PACKAGE_DATA_CLEARED" />
+            </intent-filter>
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.UID_REMOVED" />
+            </intent-filter>
+            <intent-filter android:priority="1000">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+            <intent-filter android:priority="1000">
+                <action android:name="android.provider.Telephony.WAP_PUSH_RECEIVED" />
+
+                <data android:mimeType="application/vnd.wap.mms-message" />
+            </intent-filter>
+            <intent-filter android:priority="1000">
+                <action android:name="com.miui.mihome.intent.action.lockscreen.SERVICE_CHECK" />
+            </intent-filter>
+            <intent-filter android:priority="1000">
+                <action android:name="com.miui.mihome.intent.action.lockscreen.HELPER_RELOAD" />
+            </intent-filter>
+            <intent-filter android:priority="1000">
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- =====================高德地图相关 begin ===================== -->
+        <service android:name="com.amap.api.location.APSService" />
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="fd1e593fcd0ddb8ccdee5bce8062ec20" />
+        <activity android:name=".utils.WalkRouteNaviActivity" />
+
+        <!-- =====================高德地图相关 end ===================== -->
+
+        <!-- =====================环信SDK begin ===================== -->
+        <!-- 设置环信应用的appkey -->
+        <meta-data
+            android:name="EASEMOB_APPKEY"
+            android:value="xcloudtech#iotlocate" />
+
+        <!-- 声明SDK所需的service SDK核心功能-->
+        <service
+            android:name="com.hyphenate.chat.EMChatService"
+            android:exported="true" />
+        <service
+            android:name="com.hyphenate.chat.EMJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <!-- 声明SDK所需的receiver -->
+        <receiver android:name="com.hyphenate.chat.EMMonitorReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+            <!-- 可选filter -->
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+
+        <!-- =====================环信SDK end ===================== -->
+        <activity android:name=".acty.SelectBlueFoxBackgroundActivity"/>
+        <activity android:name=".acty.EaseContactListActivity"/>
+        <activity android:name=".acty.EaseFunctionActivity">
+        </activity>
+    </application>
+
+</manifest>

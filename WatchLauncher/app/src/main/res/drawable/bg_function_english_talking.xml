@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--获取焦点状态-->
+    <item
+        android:state_focused="true"
+        android:drawable="@drawable/icon_function_english_talking_pressed" />
+
+    <!--按下状态-->
+    <item android:state_pressed="true"
+        android:drawable="@drawable/icon_function_english_talking_pressed"/>
+
+    <!--默认状态下-->
+    <item android:drawable="@drawable/icon_function_english_talking" />
+</selector>

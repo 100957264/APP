@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/black">
+
+    <RelativeLayout
+        android:id="@+id/topBar_contactor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <Button
+            android:id="@+id/contact_back"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="18dp"
+            android:background="@drawable/btn_back"
+            android:padding="3dp"
+            android:onClick="onBack"
+            android:visibility="gone"
+            android:soundEffectsEnabled="true"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:id="@+id/contact_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/contact_title"
+            android:textColor="@android:color/white"
+            android:textSize="28sp" />
+
+        <Button
+            android:id="@+id/voice_intercom"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/voice_intercom"
+            android:padding="3dp"
+            android:layout_alignParentEnd="true"
+            android:onClick="onVoiceIntercomClick"
+            android:visibility="gone"
+            android:soundEffectsEnabled="true"
+            android:scaleType="fitCenter" />
+
+    </RelativeLayout>
+
+    <com.jude.easyrecyclerview.EasyRecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/topBar_contactor"
+        app:layout_empty="@layout/view_empty"
+        app:layout_progress="@layout/view_progress" />
+
+</RelativeLayout>

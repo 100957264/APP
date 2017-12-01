@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fise_analog_clock_select"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:orientation="vertical"
+    tools:context="com.android.fisewatchlauncher.acty.FiseAnalogClockSelect" >
+   <GridView 
+        android:id="@+id/grid_view_analog_clock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:numColumns="auto_fit"    
+        android:columnWidth="120dp"
+        android:stretchMode="columnWidth"
+        ></GridView>
+    
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--talking-->
+    <string name="talking_status_recv_read">已读</string><!--已读-->
+    <string name="talking_status_recv_unread">未读</string><!--未读-->
+
+</resources>

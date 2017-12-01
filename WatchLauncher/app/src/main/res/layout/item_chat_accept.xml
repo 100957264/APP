@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/chat_content_vertical_margin">
+
+
+    <TextView
+        android:id="@+id/chat_item_date"
+        style="@style/chat_text_body"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/chat_item_header"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentLeft="true" />
+
+        <com.android.fisewatchlauncher.widget.BubbleImageView
+            android:id="@+id/chat_item_content_image"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/chat_item_header"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            app:angle="6dp"
+            app:arrowHeight="8dp"
+            app:arrowLocation="left"
+            app:arrowPosition="15dp"
+            app:arrowWidth="10dp" />
+
+        <com.android.fisewatchlauncher.widget.BubbleLinearLayout
+            android:id="@+id/chat_item_layout_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/chat_item_header"
+            android:gravity="left|center_vertical"
+            android:minHeight="48dp"
+            android:minWidth="120dp"
+            android:orientation="horizontal"
+            app:angle="4dp"
+            app:arrowHeight="10dp"
+            app:arrowLocation="left"
+            app:arrowPosition="10dp"
+            app:arrowWidth="8dp"
+            app:bubbleColor="@color/white">
+
+            <com.android.fisewatchlauncher.widget.GifTextView
+                android:id="@+id/chat_item_content_text"
+                style="@style/chat_text_subhead_black"
+                android:layout_marginLeft="@dimen/chat_content_horizontal_margin"
+                android:padding="@dimen/chat_content_vertical_margin" />
+
+            <ImageView
+                android:id="@+id/chat_item_voice"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:src="@mipmap/icon_voice_left3"
+                android:visibility="gone" />
+        </com.android.fisewatchlauncher.widget.BubbleLinearLayout>
+
+        <TextView
+            android:id="@+id/chat_item_voice_time"
+            style="@style/chat_text_body"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/chat_content_vertical_margin"
+            android:layout_toRightOf="@id/chat_item_layout_content"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/chat_item_read_status"
+            style="@style/chat_text_read_status"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="2dp"
+            android:layout_toRightOf="@id/chat_item_voice_time"
+            android:text="已读"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</LinearLayout>

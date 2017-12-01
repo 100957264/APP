@@ -1,0 +1,242 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'//添加greenDao的插件
+//apply plugin: 'com.jakewharton.butterknife'
+
+def getDate() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMdd')
+    return formattedDate
+}
+
+File signPropertiesFile = rootProject.file('sign/signing.properties')
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    defaultConfig {
+        applicationId "com.android.fisewatchlauncher"
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            //选择要添加的对应cpu类型的.so库（不需要的删除即可）。
+            abiFilters 'armeabi', 'armeabi-v7a'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "6c86501ae0e99b5cfd30b1d0", //JPush上注册的包名对应的appkey（*换成你的*）
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
+
+        flavorDimensions rootProject.ext.flavorDimensions
+        multiDexEnabled true
+    }
+
+    greendao {//添加GreenDao的生成路径
+        schemaVersion rootProject.ext.dao_version_code
+        targetGenDir 'src/main/java'
+        daoPackage 'com.android.fisewatchlauncher.dao'
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+    }
+
+    if (signPropertiesFile.exists()) {
+        Properties properties = new Properties()
+        properties.load(new FileInputStream(signPropertiesFile))
+        signingConfigs {
+            release {
+                storeFile rootProject.file(properties['STORE_FILE'])
+                storePassword properties['STORE_PASSWORD']
+                keyAlias properties['KEY_ALIAS']
+                keyPassword properties['KEY_PASSWORD']
+            }
+
+            debug {
+                storeFile rootProject.file(properties['STORE_FILE'])
+                storePassword properties['STORE_PASSWORD']
+                keyAlias properties['KEY_ALIAS']
+                keyPassword properties['KEY_PASSWORD']
+            }
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+        disable 'MissingTranslation'
+    }
+
+    productFlavors {
+        ANTI {
+            buildConfigField "String", "IP", "\"106.75.48.5\""
+//            buildConfigField "String", "IP", "\"192.168.11.145\""
+            buildConfigField "int", "PORT", "9000"
+            buildConfigField "String", "PRODUCT", "\"FISE\""
+            buildConfigField "String", "PRIVATE_KEY", "\"3JN87QYchF44FSWfY6as4Y4JwAeRtVGm\""
+            buildConfigField("boolean", "isSmartProtocol", "true")//是否是智能协议
+        }
+        FISE_WSD {
+            buildConfigField "String", "IP", "\"106.75.48.5\""
+//            buildConfigField "String", "IP", "\"192.168.11.145\""
+            buildConfigField "int", "PORT", "9000"
+            buildConfigField "String", "PRODUCT", "\"FISE\""
+            buildConfigField "String", "PRIVATE_KEY", "\"3JN87QYchF44FSWfY6as4Y4JwAeRtVGm\""
+            buildConfigField("boolean", "isSmartProtocol", "true")//是否是智能协议
+        }
+        HT_790 {
+            buildConfigField "String", "IP", "\"218.17.161.66\""
+            buildConfigField "int", "PORT", "10300"
+            buildConfigField "String", "PRODUCT", "\"SG\""
+            buildConfigField "String", "PRIVATE_KEY", "\"VMg3oCnND6NzhfA6dmNfSnBWZuKyLdeY\""
+            buildConfigField("boolean", "isSmartProtocol", "false")//是否是智能协议(定位 天气等指令有关)
+        }
+        BLUE_FOX {
+            buildConfigField "String", "IP", "\"106.75.48.5\""
+            buildConfigField "int", "PORT", "9000"
+            buildConfigField "String", "PRODUCT", "\"BLUEFOX\""
+            buildConfigField "String", "PRIVATE_KEY", "\"ImNreJCGsa4dNXgA3SBxKXUJpFHFta2H\""
+            buildConfigField("boolean", "isSmartProtocol", "true")//是否是智能协议
+        }
+
+        HEART_PULSE {//心脉动
+            buildConfigField "String", "IP", "\"118.31.43.134\""
+            buildConfigField "int", "PORT", "50001"
+            buildConfigField "String", "PRODUCT", "\"FISE\""
+            buildConfigField "String", "PRIVATE_KEY", "\"3JN87QYchF44FSWfY6as4Y4JwAeRtVGm\""
+            buildConfigField("boolean", "isSmartProtocol", "true")//是否是智能协议
+        }
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField("boolean", "LOG_DEBUG", "true")
+//            minifyEnabled false
+            signingConfig signingConfigs.debug
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
+        }
+        release {
+            buildConfigField("boolean", "LOG_DEBUG", "false")
+//            minifyEnabled true
+//            zipAlignEnabled true
+//            shrinkResources true
+            signingConfig signingConfigs.release
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            def projectName = 'Launcher';
+            String productFlavorsName = variant.productFlavors[0].name;
+            String buildTypeName = variant.buildType.name;
+            def apkName;
+            if (buildTypeName.equals('release')) {
+                apkName = projectName + defaultConfig.versionName +
+                        '_' + productFlavorsName + "_" + getDate() + '.apk'
+            } else if (buildTypeName.equals('debug')) {
+                apkName = projectName + defaultConfig.versionName +
+                        '_' + productFlavorsName + '_debug' + '.apk'
+            }
+            outputFileName = apkName;
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+
+    compile rootProject.ext.dependencies["constraint-layout"]
+    compile rootProject.ext.dependencies["support-v4"]
+    compile rootProject.ext.dependencies["support-v7"]
+    compile rootProject.ext.dependencies["support-design"]
+    compile rootProject.ext.dependencies["recyclerview-v7"]
+    //    compile rootProject.ext.dependencies["cardview-v7"]
+    //    compile rootProject.ext.dependencies["gridlayout-v7"]
+    compile rootProject.ext.dependencies["support-percent"]
+    compile rootProject.ext.dependencies["support-multidex"]
+    compile rootProject.ext.dependencies["eventbus"]
+    compile rootProject.ext.dependencies["butterknife"]
+    //    apt "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknife_version"
+    compile rootProject.ext.dependencies["glide"]
+    compile rootProject.ext.dependencies["nineoldandroids"]
+    //    compile rootProject.ext.dependencies["umengAnalytics"]
+    //    compile rootProject.ext.dependencies["leakCanary"]
+    compile rootProject.ext.dependencies["rxjava"]
+    compile rootProject.ext.dependencies["rxandroid"]
+//    compile rootProject.ext.dependencies["okhttp-integration"]
+    compile rootProject.ext.dependencies["okhttp"]
+    compile rootProject.ext.dependencies["logging-interceptor"]
+    compile rootProject.ext.dependencies["gson"]
+    compile(rootProject.ext.dependencies["retrofit"]) {
+        exclude module: 'okhttp'
+    }
+    compile rootProject.ext.dependencies["converter-gson"]
+    compile rootProject.ext.dependencies["adapter-rxjava"]
+    compile rootProject.ext.dependencies["rxbinding"]
+    compile rootProject.ext.dependencies["rxpermissions"]
+    compile rootProject.ext.dependencies["greendao"]
+    compile('com.zhy:flowlayout-lib:1.0.3') {
+        exclude group: 'com.android.support' //exclude 可以解决 lib冲突的问题
+    }
+    compile('com.github.adrielcafe:AndroidAudioRecorder:0.3.0') {
+        exclude group: 'com.android.support'
+    }
+    //    compile 'com.google.zxing:core:3.2.1'
+    compile 'com.journeyapps:zxing-android-embedded:3.3.0'
+    //    provided files('systemlibs/android.jar')
+    compile 'com.jude:easyrecyclerview:4.2.3'
+
+    //==========融云相关 begin=======
+//    compile files('libs/agora-rtc-sdk.jar')
+//    compile files('libs/CallEngine_Agora.jar')
+//    compile files('libs/Rong_CallLib.jar')
+//    compile project (':IMKit')
+    //==========融云相关 end=======
+
+    compile('com.lzy.net:okgo:+') {
+        exclude module: 'okhttp'
+    }
+
+    compile 'com.lzy.net:okrx:+'
+    compile 'com.lzy.net:okserver:+'
+
+    compile 'com.amap.api:location:latest.integration'//高德定位最新版
+    compile 'com.amap.api:navi-3dmap:latest.integration'//高德导航最新版
+
+    //Optional compile for GCM (Google Cloud Messaging).
+//    compile 'com.google.android.gms:play-services-gcm:9.4.0'
+//    compile 'com.hyphenate:hyphenate-sdk:3.3.0'
+    compile project(':easeui')
+
+}

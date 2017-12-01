@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/page_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/iv_function_client_test"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:background="@drawable/icon_fise_launcher" />
+
+        <TextView
+            android:id="@+id/tv_function_client_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_function_client_test"
+            android:text="@string/function_client_test"
+            android:textSize="@dimen/main_activity_text_size" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="msg_recall_by_self">This message has been recall by me</string>
+    <string name="msg_recall_by_user">This message has been recalled by %1$s</string>
+    <string name="clear_records">Clear conversation?</string>
+    <string name="clear_all_records">Clear all conversations？</string>
+    <string name="location_recv">[%s location]</string>
+    <string name="location_message">The location information</string>
+    <string name="recording_video">Record video</string>
+    <string name="stop_record">Stop record</string>
+    <string name="switch_camera">Switch camera</string>
+    <string name="capture_image">Capture image</string>
+    <string name="search_contanier">Search："%s"</string>
+
+    <string name="network_unstable">Network unstable</string>
+    <string name="no_call_data">No call data</string>
+    <string name="record_finish_toast">Record successfully,it is saved in:%s</string>
+
+    <string name="Are_connected_to_each_other">Connecting to peer..</string>
+    <string name="Is_not_yet_connected_to_the_server">Not connect to server</string>
+    <string name="have_connected_with">Connected to the peer</string>
+</resources>

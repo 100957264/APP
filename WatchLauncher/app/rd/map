@@ -1,0 +1,13 @@
+a. HashMap的循环，如果既需要key也需要value，直接用
+Map<String, String> map = new HashMap<String, String>();
+for (Entry<String, String> entry : map.entrySet()) {
+	entry.getKey();
+	entry.getValue();
+}
+即可，foreach简洁易懂。
+
+b. 如果只是遍历key而无需value的话，可以直接用
+Map<String, String> map = new HashMap<String, String>();
+for (String key : map.keySet()) {
+	// key process
+}

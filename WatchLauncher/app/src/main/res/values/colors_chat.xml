@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 其它背景色或分割线相关 -->
+    <color name="chat_bg_content">#f3f3f3</color>
+    <color name="chat_divider_line">#d9d9d9</color>
+
+    <!-- 字体色 -->
+    <color name="chat_text_title">#1b1b1b</color>
+    <color name="chat_text_content">#818181</color>
+    <color name="chat_text_sub">#919191</color>
+    <color name="chat_text_read_status_color">#43c407</color>
+
+    <color name="chat_text_hint">#c7c7c7</color>
+    <color name="chat_text_black">#404040</color>
+</resources>

@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">沸石桌面</string>
+    <string name="default_send_text">请输入要发送的信息</string>
+    <string name="network_disavilable_text">网络连接异常</string>
+    <string name="copyright">©2017 版权所有</string>
+    <string name="app_qr_code_for_bind">扫描绑定</string>
+    <string name="app_qr_code_for_download">扫描下载</string>
+    <string name="app_location">定位</string>
+    <string name="function_client_test">Tcp测试</string>
+    <string name="normal_call">拨打电话</string>
+    <string name="normal_mms">发送短信</string>
+    <string name="video_call">视频通话</string>
+    <string name="voice_call">语音通话</string>
+    <string name="name_baba">爸爸</string>
+    <string name="name_mama">妈妈</string>
+    <string name="name_nainai">奶奶</string>
+    <string name="name_yeye">爷爷</string>
+    <string name="contact_title">打电话</string>
+    <string name="function_phonebook">联系人</string>
+    <string name="function_wetchat">微聊</string>
+    <string name="function_friends">朋友</string>
+    <string name="function_camera">相机</string>
+    <string name="function_story">讲故事</string>
+    <string name="function_english_study">学习英语</string>
+    <string name="function_settings">设置</string>
+    <string name="function_step">计步</string>
+    <string name="function_recorder">录音</string>
+    <string name="function_img">相册</string>
+    <string name="function_video">视频</string>
+    <string name="function_qr">二维码</string>
+    <string name="function_heart_rate">心率</string>
+
+    <string name="app_settings">设置</string>
+    <string name="app_camera">相机</string>
+    <string name="app_gallery">图库</string>
+    <string name="app_dialer">拨号</string>
+    <string name="app_contact">联系人</string>
+    <string name="app_mms">短信</string>
+    <string name="app_file_manager">文件管理</string>
+    <string name="app_qq">QQ</string>
+    <string name="app_video">视频通话</string>
+    <string name="app_wechat">微聊</string>
+    <string name="app_stepcounter">计步器</string>
+    <string name="camera_can_not_found">相机不可用</string>
+    <string name="qq_can_not_be_found">QQ未安装</string>
+    <string name="app_can_not_be_found">应用未安装</string>
+    <string name="style_select">选择表盘</string>
+    <string name="all_apps">应用程序</string>
+    <string name="app_sos">SOS</string>
+    <string name="app_heart_rate">心率</string>
+    <string name="unit_standby_weather">%℃</string>
+
+</resources>

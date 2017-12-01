@@ -1,0 +1,111 @@
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/standby_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <!-- android:background="@drawable/main_background"-->
+
+    <RelativeLayout
+        android:id="@+id/rl_clock_conttainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        app:layout_heightPercent="40%"
+        app:layout_widthPercent="50%"
+        app:layout_marginLeftPercent="8%"
+        app:layout_marginTopPercent="15%">
+
+        <TextClock
+            android:id="@+id/fise_clock_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:fontFamily="Roboto-Bold"
+            android:format12Hour="hh:mm"
+            android:format24Hour="HH:mm"
+            android:textColor="@color/standby_clock_time"
+            android:textSize="40sp" />
+
+        <TextClock
+            android:id="@+id/fise_clock_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/fise_clock_time"
+            android:layout_marginTop="2dp"
+            android:format12Hour="MM月dd日"
+            android:format24Hour="MM月dd日"
+            android:textColor="@android:color/white"
+            android:textSize="13sp" />
+
+        <TextClock
+            android:id="@+id/fise_clock_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/fise_clock_date"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/fise_clock_date"
+            android:format12Hour="EEEE"
+            android:format24Hour="EEEE"
+            android:maxLines="1"
+            android:textColor="@android:color/white"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_weather_container"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        app:layout_heightPercent="40%"
+        app:layout_marginLeftPercent="7%"
+        app:layout_marginTopPercent="40%">
+
+        <ImageView
+            android:id="@+id/fise_weather_pic"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/ic_weather_unknow"/>
+
+        <TextView
+            android:id="@+id/fise_weather_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/fise_weather_pic"
+            android:layout_toRightOf="@id/fise_weather_pic"
+            android:text="25℃"
+            android:gravity="bottom"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:visibility="invisible"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_locate_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        app:layout_heightPercent="47%"
+        app:layout_widthPercent="47%"
+        app:layout_marginLeftPercent="40%"
+        app:layout_marginRightPercent="2%"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginTopPercent="50%">
+
+        <ImageView
+            android:id="@+id/iv_standby_location"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_logo_liteg" />
+
+    </RelativeLayout>
+</android.support.percent.PercentRelativeLayout>

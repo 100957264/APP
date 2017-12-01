@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <color name="version_eye_2">#04CBFF</color>
+    <color name="weather_color">#00ffffff</color>
+    <color name="xiangyabai">#FFFFF0</color>
+</resources>

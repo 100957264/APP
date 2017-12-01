@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item>
+        <bitmap android:src="@drawable/ic_battery_0" />
+	 </item>
+
+    <item android:id="@+id/clip_drawable">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/ic_battery_100"
+            android:gravity="left" />
+    </item>
+</layer-list>
