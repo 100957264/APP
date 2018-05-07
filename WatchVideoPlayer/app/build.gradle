@@ -1,0 +1,92 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "com.danxx.mdplayer"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 20
+        versionName "2.0.0"
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+    dexOptions {
+        incremental true
+        javaMaxHeapSize "4g"
+        //关闭预编译
+        preDexLibraries = false
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug{
+            println 'build - debug'
+        }
+    }
+
+    productFlavors {
+        beta{
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE:"beta"]
+        }
+        xiaomi {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE:"xiaomi"]
+        }
+        m360 {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE:"m360"]
+        }
+        wandoujia {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wandoujia"]
+        }
+        fir {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "fir"]
+        }
+        umeng {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "umeng"]
+        }
+        play {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "play"]
+        }
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile project(':ijkplayer-exo')
+    compile project(':ijkplayer-java')
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:preference-v7:23.0.1'
+    compile 'com.android.support:design:23.4.0'
+    compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.android.support:recyclerview-v7:23.4.0'
+    compile 'com.android.support:cardview-v7:23.4.0'
+    compile 'com.takisoft.fix:preference-v7:23.4.0.4'
+    compile 'com.github.clans:fab:1.6.4'
+    //retrofit
+    compile 'com.squareup.retrofit:retrofit:2.0.0-beta2'
+    compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
+    compile 'com.squareup.retrofit:adapter-rxjava:2.0.0-beta2'
+    //Rxjava + Rxandroid
+    compile 'io.reactivex:rxandroid:1.2.0'
+    compile 'io.reactivex:rxjava:1.1.5'
+    //blurview
+    compile 'com.eightbitlab:blurview:1.0.2'
+    //photoview
+    compile 'com.bm.photoview:library:1.4.0'
+
+    compile 'me.relex:photodraweeview:1.1.2'
+    //picasso
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    //fresco
+    compile 'com.facebook.fresco:fresco:0.11.0'
+    //umeng
+    compile 'com.umeng.analytics:analytics:latest.integration'
+}

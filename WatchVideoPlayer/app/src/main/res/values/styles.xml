@@ -1,0 +1,102 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="preferenceTheme">@style/Preference_Text</item>
+        <item name="android:actionMenuTextColor">@color/textColor</item>
+        <item name="actionButtonStyle">@style/Widget.App.ActionButton</item>
+    </style>
+
+    <style name="Widget.App.ActionButton" parent="@style/Widget.AppCompat.ActionButton">
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Preference_Text" parent="@style/PreferenceThemeOverlay">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="menu_labels_style">
+        <item name="android:background">@drawable/fab_label_background</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="FullscreenTheme" parent="Theme.App.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="Theme.App.NoActionBar" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="actionButtonStyle">@style/Widget.App.ActionButton</item>
+    </style>
+
+    <style name="MenuButtonsSmall">
+        <item name="fab_colorNormal">@color/fab_pressed_son</item>
+        <item name="fab_colorPressed">@color/fab_pressed_son</item>
+        <item name="fab_colorRipple">#99FFFFFF</item>
+    </style>
+
+    <style name="MediaButtonCompat">
+        <item name="android:background">@null</item>
+        <item name="android:layout_width">71dip</item>
+        <item name="android:layout_height">52dip</item>
+    </style>
+
+    <style name="MediaButtonCompat.Previous">
+        <item name="android:src">@mipmap/vvc_ic_media_previous</item>
+    </style>
+
+    <style name="MediaButtonCompat.Next">
+        <item name="android:src">@mipmap/vvc_ic_media_next</item>
+    </style>
+
+    <style name="MediaButtonCompat.Play">
+        <item name="android:src">@mipmap/vvc_ic_media_play</item>
+    </style>
+
+    <style name="MediaButtonCompat.Ffwd">
+        <item name="android:src">@mipmap/vvc_ic_media_ff</item>
+    </style>
+
+    <style name="MediaButtonCompat.Rew">
+        <item name="android:src">@mipmap/vvc_ic_media_rew</item>
+    </style>
+
+    <style name="MediaButtonCompat.Pause">
+        <item name="android:src">@mipmap/vvc_ic_media_pause</item>
+    </style>
+
+    <style name="AppThemeNoTitleBar" parent="Theme.AppCompat.Light.NoActionBar">
+    </style>
+
+    <!--播放器进度条的styles-->
+    <style name="SeekBarAppTheme">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:focusable">true</item>
+        <item name="android:progressDrawable">
+            @drawable/jky_player_progressbar
+        </item>
+        <item name="android:thumb">@drawable/ic_circles</item>
+        <item name="android:minHeight">5dip</item>
+        <item name="android:maxHeight">5dip</item>
+        <item name="android:paddingLeft">5.0dip</item>
+        <item name="android:paddingRight">5.0dip</item>
+    </style>
+    <!-- 播放器进度条end-->
+</resources>

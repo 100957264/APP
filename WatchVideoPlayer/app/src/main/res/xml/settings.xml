@@ -1,0 +1,17 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:textColor="@color/textColor">
+    <PreferenceCategory android:title="@string/pref_title_general">
+
+        <com.danxx.mdplayer.widget.IjkListPreference
+            android:defaultValue="0"
+            android:entries="@array/pref_entries_player"
+            android:entryValues="@array/pref_entry_values_player"
+            android:key="@string/pref_key_player"
+            android:persistent="true"
+            android:title="@string/pref_title_player"
+            app:entrySummaries="@array/pref_entry_summaries_player" />
+    </PreferenceCategory>
+
+
+</PreferenceScreen>
